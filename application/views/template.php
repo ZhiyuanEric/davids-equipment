@@ -21,8 +21,8 @@
                 }
             }
             .containerdiv { float: left; position: relative; } 
-            .weapon { position: absolute; top: 0; right: 0; }
-            .helmet { position: absolute; top: -35px; right: 25px; } 
+            .weapon { position: absolute; top: 75px; left: -30px; }
+            .helmet { position: absolute; top: -50px; right: 30px; } 
         </style>
     </head>
     <body>
