@@ -1,4 +1,4 @@
-Code ,Name,Description
+id,name,description
 cat1,Head,"Head gear, int, str"
 cat2,Weapon,"hand held, weapon, str"
 cat3,Robe,"worn over torso, str, int"
