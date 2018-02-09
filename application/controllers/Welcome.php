@@ -21,9 +21,9 @@ class Welcome extends Application
 	{
                 $this->data['pagebody'] = 'home';
                 
-                $this->data['character'] = '<img class="center-block parent" src="https://cdn.pixabay.com/photo/2017/10/18/10/15/stick-man-2863519_960_720.png" style="width: auto; height: 100%;"/>';
-                $this->data['weapon'] = '<img class="weapon" src="/assets/images/items/sword_iron.png"/>';
-                $this->data['helmet'] = '<img class="helmet" style="width:80%; height:auto" src="/assets/images/items/helmet_light_iron.png"/>';
+                $this->data['character'] = 'stickman.png';
+                $this->data['weapon'] = 'sword_iron.png';
+                $this->data['helmet'] = 'helmet_light_iron.png';
                 
 		$this->render(); 
 	}
