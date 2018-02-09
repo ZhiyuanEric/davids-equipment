@@ -7,6 +7,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            .jumbotron {
+                padding: 0.5em 0.6em;
+                h1 {
+                    font-size: 2em;
+                }
+                p {
+                    font-size: 1.2em;
+                    .btn {
+                        padding: 0.5em;
+                    }
+                }
+            }
+            .containerdiv { float: left; position: relative; } 
+            .weapon { position: absolute; top: 0; right: 0; }
+            .helmet { position: absolute; top: -35px; right: 25px; } 
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-default">
