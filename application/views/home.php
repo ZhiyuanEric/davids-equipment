@@ -4,9 +4,13 @@
 <div class="row">
     <div class="col-md-4">
         Equipment Sets
-        <select id="set" class="form-control form-control-sm">
-            <option>Default</option>
-        </select>
+        <form method="post" action="/Welcome/Update">
+            <select class="form-control form-control-sm" name="Set">
+                <option value="1">Default</option>
+                <option value="2">Plat</option>
+            </select>
+            <input type="submit">
+        </form>
     </div>
     <div class="col-md-2">
     </div>
