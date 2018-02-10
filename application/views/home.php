@@ -6,8 +6,17 @@
         Equipment Sets
         <form method="post" action="/Welcome/Update">
             <select class="form-control form-control-sm" name="Set">
+                <optgroup label = "Equipment Sets">
                 <option value="1">Default</option>
                 <option value="2">Plat</option>
+                </optgroup>
+                <!--
+                <optgroup label = "Head">
+                    <option value="H1">Bandana</option>
+                    <option value="H2">Glasses</option>
+                    <option value="H3">War Helmet</option>
+                </optgroup>
+                !-->
             </select>
             <input type="submit">
         </form>
