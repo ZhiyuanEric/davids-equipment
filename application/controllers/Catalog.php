@@ -19,13 +19,7 @@ class Catalog extends Application
 	 */
 	public function index()
 	{
-        $this->load->model('category');
-        $all_the_items = $this->category->all();
-        
-        //prints all categories
-        print_r($all_the_items);
-        
-        $this->data['pagebody'] = 'catalog';
+                $this->data['pagebody'] = 'catalog';
 		$this->render(); 
 	}
 
