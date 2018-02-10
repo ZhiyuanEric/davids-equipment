@@ -27,5 +27,13 @@ class Welcome extends Application
                 
 		$this->render(); 
 	}
+        
+        public function update() {
+            
+            $choice = $this->input->post();
+            if($choice) {
+                echo $choice['Set'];
+            }
+        }
 
 }
