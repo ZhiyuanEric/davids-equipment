@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
         <style>
             .jumbotron {
                 padding: 0.5em 0.6em;
@@ -44,3 +46,27 @@
         </div>
     </body>
 </html>
+<script>
+    // this is the id of the form
+    $("#presetForm").submit(function (e) {
+
+        var url = "/Welcome/Update"; // the script that handles the form input
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#presetForm").serialize(), // serializes the form's elements.
+            success: function (data)
+            {
+                var jsonData = JSON.parse(data)
+
+                if (jsonData.length === 2) { //Just 2 for now
+                    $("#weapon").attr("src","/assets/images/items/" + jsonData[0]);
+                $("#helmet").attr("src","/assets/images/items/" + jsonData[1]);
+                }
+            }
+        });
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+</script>
