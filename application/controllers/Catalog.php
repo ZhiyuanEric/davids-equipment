@@ -26,7 +26,7 @@ class Catalog extends Application
 			$itemList[] = $this->parser->parse('ItemBox', (array) $item, true);
 		}
 
-        //prints all categories
+    // prints all categories
 		// print_r($all_the_items);
 		
 		// prime the table class
