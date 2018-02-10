@@ -9,6 +9,13 @@
                 <option value="Default">Default</option>
                 <option value="Wood">Wood</option>
                 <option value="Bronze">Bronze</option>
+                <!--
+                <optgroup label = "Head">
+                    <option value="H1">Bandana</option>
+                    <option value="H2">Glasses</option>
+                    <option value="H3">War Helmet</option>
+                </optgroup>
+                !-->
             </select>
             <input id="submitBtn" style="margin-top: 10px" class="btn btn-info" type="submit">
         </form>
