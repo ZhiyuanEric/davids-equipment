@@ -19,7 +19,12 @@ class Welcome extends Application
 	 */
 	public function index()
 	{
-		$this->data['pagebody'] = 'welcome_message';
+                $this->data['pagebody'] = 'home';
+                
+                $this->data['character'] = 'stickman.png';
+                $this->data['weapon'] = 'sword_iron.png';
+                $this->data['helmet'] = 'helmet_light_iron.png';
+                
 		$this->render(); 
 	}
 
