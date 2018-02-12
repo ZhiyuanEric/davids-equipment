@@ -1,7 +1,10 @@
 <?php
 /**
-csv extracter
-*/
+ * Reads in the csv and holds on to it,
+ * used to search by id on the table.
+ * 
+ * @author alex
+ */
 class Parser extends CI_{
     
     function __construct() {
