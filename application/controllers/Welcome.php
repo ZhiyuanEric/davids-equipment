@@ -35,21 +35,36 @@ class Welcome extends Application {
      */
     public function update() {
 
-        //TODO: Instead of hardcoding stuff, pull it like catalog
+        $this->load->model('equipmentSet');
+        $sets = $this->equipmentSet->all();
+
+        $this->load->model('accessory');
+        $accs = $this->accessory->all();
+
         $choice = $this->input->post("Set");
+
+        $set = $sets['equip1']; //Default set
+
         switch ($choice) {
             case "Default":
-                $set = array("sword_iron.png", "helmet_light_iron.png");
-                echo json_encode($set);
+                $set = $sets['equip1'];
+                echo json_encode($sets['equip1']);
+                echo "\n"; //Newline to separate json objects
                 break;
-            case "Bronze":
-                $set = array("sword_bronze.png", "helmet_light_bronze.png");
-                echo json_encode($set);
+            case "Other":
+                $set = $sets['equip2'];
+                echo json_encode($sets['equip1']);
+                echo "\n";
                 break;
-            case "Wood":
-                $set = array("staff_regular_oak.png", "log_oak_1.png");
-                echo json_encode($set);
-                break;
+        }
+
+        foreach ($set as $cat) {
+            //Check if it's a valid accessory
+            if (strpos($cat, 'equip') === 0 || strpos($cat, '0') === 0) {
+                continue;
+            }
+            echo json_encode($accs[$cat]);
+            echo "\n";
         }
     }
 

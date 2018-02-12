@@ -58,12 +58,20 @@
             data: $("#presetForm").serialize(), // serializes the form's elements.
             success: function (data)
             {
-                var jsonData = JSON.parse(data)
+                //alert(data);
 
-                if (jsonData.length === 2) { //Just 2 for now
-                    $("#weapon").attr("src","/assets/images/items/" + jsonData[0]);
-                $("#helmet").attr("src","/assets/images/items/" + jsonData[1]);
-                }
+                //Split the JSON objects
+                var lines = data.split("\n");
+
+                var set = JSON.parse(lines[0]);
+
+                //Parse the preset info
+                var helm = set.cat1;
+                var weapon = set.cat2;
+                var robe = set.cat3;
+                var socks = set.cat4;
+                var gloves = set.cat5;
+
             }
         });
 

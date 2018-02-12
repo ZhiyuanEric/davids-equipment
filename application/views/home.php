@@ -7,8 +7,7 @@
         <form id="presetForm" method="post" action="/Welcome/Update">
             <select class="form-control form-control-sm" name="Set">
                 <option value="Default">Default</option>
-                <option value="Wood">Wood</option>
-                <option value="Bronze">Bronze</option>
+                <option value="Other">Wood</option>
                 <!--
                 <optgroup label = "Head">
                     <option value="H1">Bandana</option>
