@@ -45,7 +45,7 @@ class Parser extends CI_{
 		$this->$table = $acc;
 		return $this->$table;
 	}
-	//
+	
 	function findById($id)
 	{
 
