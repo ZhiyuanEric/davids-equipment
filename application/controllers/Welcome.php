@@ -24,10 +24,6 @@ class Welcome extends Application {
         $this->data['pagebody'] = 'home';
 
         $this->data['character'] = 'stickman.png';
-
-//        $this->data['set'] = '<option onclick="" value="Default">Default</option>
-//                <option onclick="" value="Banana Man">Banana Man</option>
-//                <option onclick="" value="Wood Guy">Wood Guy</option>';
         
         $this->load();
         
@@ -49,26 +45,8 @@ class Welcome extends Application {
 
         $choice = $this->input->post("Set");
 
-        $set = $sets['equip1']; //Default set
-
-        //Equipment set determined here
-        switch ($choice) {
-            case "Default":
-                $set = $sets['equip-1'];
-                echo json_encode($sets['equip-1']);
-                echo "\n"; //Newline to separate json objects
-                break;
-            case "Banana Man":
-                $set = $sets['equip1'];
-                echo json_encode($sets['equip1']);
-                echo "\n";
-                break;
-            case "Wood Guy":
-                $set = $sets['equip2'];
-                echo json_encode($sets['equip2']);
-                echo "\n";
-                break;
-        }
+        $set = $sets[$choice];
+        
         $i = 0;
         //Iterate through the item ID's, and echo them
         foreach ($set as $cat) {
@@ -88,7 +66,7 @@ class Welcome extends Application {
         $this->load->model('equipmentSet');
         $sets = $this->equipmentSet->all();
         foreach ($sets as $set) {
-            $str .= "<option onclick='' value = '$set->name'>$set->name</option>";
+            $str .= "<option value = '$set->id'>$set->name</option>";
         }
         $this->data['name'] = $str;
         
