@@ -72,14 +72,14 @@
                 //Split the JSON objects
                 var lines = data.split("\n");
 
-                var set = JSON.parse(lines[0]);
+                //var set = JSON.parse(lines[0]);
 
                 //Parse the preset info
-                var helmet = JSON.parse(lines[1]);
-                var weapon = JSON.parse(lines[2]);
-                var robe = JSON.parse(lines[3]);
-                var socks = JSON.parse(lines[4]);
-                var gloves = JSON.parse(lines[5]);
+                var helmet = JSON.parse(lines[0]);
+                var weapon = JSON.parse(lines[1]);
+                var robe = JSON.parse(lines[2]);
+                var socks = JSON.parse(lines[3]);
+                var gloves = JSON.parse(lines[4]);
                 
                 //Set the images here
                 $("#helmet").attr("src", "/assets/images/items/" + helmet.imageName + ".png");
