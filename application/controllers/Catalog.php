@@ -54,11 +54,55 @@ class Catalog extends Application
 		// print_r($all_the_items);
 		
 		// prime the table class
-		
+			
+		$role = $this->session->userdata('userrole');
+		$this->data['pagetitle'] = 'Current User ('. $role . ')';
+
+		if ($role == ROLE_OWNER) 
+        	$this->data['edit'] = $this->parser->parse('modify',[], true);
+		else
+			$this->data['edit'] = " ";
+			
 		$this->data['itemTable'] = $itemTables;
         
         $this->data['pagebody'] = 'catalog';
 		$this->render(); 
 	}
 
+	public function modify() {
+		$this->showForm();
+	}
+
+	public function showForm() {
+		$this->load->helper('form');
+        //$task = $this->session->userdata('task');
+        //$this->data['id'] = $equip->id;
+        // if no errors, pass an empty message
+        if ( ! isset($this->data['error']))
+            $this->data['error'] = '';
+        $fields = array(
+			'fhead'		 => form_label('head'),
+			'fbody'		 => form_label('body'),
+			'fweapon'		 => form_label('weapon'),
+			'ffoot'		 => form_label('foot'),
+			'fgloves'		 => form_label('gloves'),			
+            'zsubmit'    => form_submit('submit', 'Submit'),
+        );
+        $this->data = array_merge($this->data, $fields);
+        $this->data['pagebody'] = 'modifySet';
+        $this->render();
+	}
+
+	public function cancel() {
+		//$this->session->unset_userdata('task');
+        redirect('/catalog');
+	}
+
+	public function delete() {
+		//$dto = $this->session->userdata('task');
+        //$task = $this->tasks->get($dto->id);
+        //$this->tasks->delete($task->id);
+        //$this->session->unset_userdata('task');
+        redirect('/catalog');
+	}
 }
