@@ -46,6 +46,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="/Catalog">Catalog</a></li>
+                    <li><a href="/Create">Create</a></li>
                 </ul>
             </div>
         </nav>
