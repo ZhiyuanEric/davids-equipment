@@ -46,6 +46,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="/Catalog">Catalog</a></li>
+                    <li><a href="/Create">Create</a></li>
                 </ul>
             </div>
         </nav>
@@ -104,4 +105,66 @@
 
         e.preventDefault(); // avoid to execute the actual submit of the form.
     });
+    
+//    var options = document.getElementsByClassName('opt');
+//    
+//    for (i = 0; i < options.length; i++) {
+//        options[i].onclick=function() {
+//            alert(1)
+//        }
+//    }
+        // this is the id of the form
+    function displayEquip(){
+        
+        var url = "/Create/Update"; // the script that handles the form input
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#createSet").serialize(), // serializes the form's elements.
+            success: function (data)
+            {
+                //alert(data); //debug
+                //Split the JSON objects
+                var lines = data.split("\n");
+
+                //var set = JSON.parse(lines[0]);
+
+                //Parse the preset info
+                var helmet = JSON.parse(lines[0]);
+                var weapon = JSON.parse(lines[1]);
+                var robe = JSON.parse(lines[2]);
+                var socks = JSON.parse(lines[3]);
+                var gloves = JSON.parse(lines[4]);
+                
+                //Set the images here
+                $("#helmet").attr("src", "/assets/images/items/" + helmet.imageName + ".png");
+                $("#weapon").attr("src", "/assets/images/items/" + weapon.imageName + ".png");
+                $("#robe").attr("src", "/assets/images/items/" + robe.imageName + ".png");
+                $("#socks").attr("src", "/assets/images/items/" + socks.imageName + ".png");
+                $("#socks2").attr("src", "/assets/images/items/" + socks.imageName + ".png");
+                $("#gloves").attr("src", "/assets/images/items/" + gloves.imageName + ".png");
+                
+                //Get the stat values
+                var str = +helmet.str + +weapon.str + +robe.str + +socks.str + +gloves.str;
+                var int = +helmet.int + +weapon.int + +robe.int + +socks.int + +gloves.int;
+                var dex = +helmet.dex + +weapon.int + +robe.int + +socks.int + +gloves.int;
+                
+                //Set the stat values
+                $("#str").css("width", str);
+                $("#int").css("width", int);
+                $("#dex").css("width", dex);
+
+            }
+        });
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+    }
+    
+    document.getElementById('submitBtn1').onclick=function() {
+        var enter = document.getElementById('name').value
+        if(enter == "") {
+            document.getElementById('errmsg').style.display = "";
+            return false
+        }
+    }
 </script>
