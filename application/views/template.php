@@ -159,4 +159,12 @@
 
         e.preventDefault(); // avoid to execute the actual submit of the form.
     }
+    
+    document.getElementById('submitBtn1').onclick=function() {
+        var enter = document.getElementById('name').value
+        if(enter == "") {
+            document.getElementById('errmsg').style.display = "";
+            return false
+        }
+    }
 </script>

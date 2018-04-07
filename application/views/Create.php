@@ -26,8 +26,9 @@
             <select class="form-control form-control-sm" name="Gloves" onchange="displayEquip()">
                 {Gloves}
             </select>
-            name: <input type="text" style="margin-top: 10px; margin-bottom: 10px" class="form-control">
-            <input id="submitBtn" style="margin-top: 10px; margin-bottom: 10px" class="btn btn-info" type="submit">
+            name: <input id="name" type="text" style="margin-top: 10px; margin-bottom: 10px" class="form-control">
+            <p id="errmsg" style="display: none;">enter a name</p>
+            <input id="submitBtn1" style="margin-top: 10px; margin-bottom: 10px" class="btn btn-info" type="submit">
         </form>
         <!-- Strength bar -->
         Strength
