@@ -5,25 +5,25 @@
     <div class="col-md-4">
         <!-- Preset form -->
         
-        <form id="presetForm" method="post" action="/Welcome/Update">
+        <form id="createSet" method="post" action="/Create/Update">
             Head:
-            <select class="form-control form-control-sm" name="Set">
+            <select class="form-control form-control-sm" name="Head" onchange="displayEquip()">
                 {Head}
             </select>
             Weapon:
-            <select class="form-control form-control-sm" name="Set">
+            <select class="form-control form-control-sm" name="Weapon" onchange="displayEquip()">
                 {Weapon}
             </select>
             Robe:
-            <select class="form-control form-control-sm" name="Set">
+            <select class="form-control form-control-sm" name="Robe" onchange="displayEquip()">
                 {Robe}
             </select>
             Socks:
-            <select class="form-control form-control-sm" name="Set">
+            <select class="form-control form-control-sm" name="Socks" onchange="displayEquip()">
                 {Socks}
             </select>
             Gloves:
-            <select class="form-control form-control-sm" name="Set">
+            <select class="form-control form-control-sm" name="Gloves" onchange="displayEquip()">
                 {Gloves}
             </select>
             name: <input type="text" style="margin-top: 10px; margin-bottom: 10px" class="form-control">

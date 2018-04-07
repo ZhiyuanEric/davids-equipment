@@ -33,12 +33,33 @@ class Create extends Application
         $this->load->model('category');
         $categories = $this->category->all();
         foreach($categories as $categorie) {
-            $str = "";
+            $str = "<option value = '0'>select.1</option>";
             $equips = $this->accessory->getItems($categorie->id);
             foreach($equips as $equip) {
-                $str .= "<option value = '$equip->name'>$equip->name</option>";
+                $str .= "<option value = '$equip->id'>$equip->name</option>";
             }
             $this->data[$categorie->name] = $str;
+        }
+    }
+    
+        public function update() {
+
+        $this->load->model('accessory');
+        $accs = $this->accessory->all();
+        //Load models
+        $this->load->model('equipmentSet');
+        $sets = $this->equipmentSet->all();
+
+        $this->load->model('accessory');
+        $accs = $this->accessory->all();
+        $choices = array($this->input->post("Head"), 
+                        $this->input->post("Weapon"), 
+                        $this->input->post("Robe"), 
+                        $this->input->post("Socks"), 
+                        $this->input->post("Gloves"));
+        foreach($choices as $choice) {
+            echo json_encode($accs[$choice]);
+            echo "\n";
         }
     }
 
