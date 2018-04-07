@@ -81,11 +81,11 @@ class Catalog extends Application
         if ( ! isset($this->data['error']))
             $this->data['error'] = '';
         $fields = array(
-			'fhead'		 => form_label('head'),
-			'fbody'		 => form_label('body'),
-			'fweapon'		 => form_label('weapon'),
-			'ffoot'		 => form_label('foot'),
-			'fgloves'		 => form_label('gloves'),			
+			'fhead'		 => form_label('Head') . form_input(),//enter the variable new value inside like this form_input($equip->head)
+			'fbody'		 => form_label('Body') . form_input(),
+			'fweapon'		 => form_label('Weapon'). form_input(),
+			'ffoot'		 => form_label('Foot'). form_input(),
+			'fgloves'		 => form_label('Gloves'). form_input(),			
             'zsubmit'    => form_submit('submit', 'Submit'),
         );
         $this->data = array_merge($this->data, $fields);

@@ -1,10 +1,13 @@
 <h1>Set # {id}</h1>
 <form role="form" action="/mtce/submit" method="post">
-    {fhead}
+{fhead}
     {fbody}
+    <br />
 	{fweapon}
-	{ffoot}
+    {ffoot}
+    <br />
 	{fgloves}
+    <br />
     {zsubmit}
 </form>
     {error}
